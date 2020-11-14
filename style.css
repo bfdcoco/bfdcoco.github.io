@@ -1,0 +1,25 @@
+li{
+  font-size : 14pt;
+  list-style-type : circle
+}
+
+@import url(http://fonts.googleapis.com/earlyaccess/nanumpenscript.css);
+
+body{
+  font-family: 'Nanum Pen Script', serif;
+}
+
+div {
+  font-size : 10pt;
+  margin : 10px;
+  border-left: 1px solid #8B00FF;
+  padding-left : 20px;
+  border-left-width : 3px;
+
+  border-right: 1px solid #8B00FF;
+  border-right-width : 3px;
+}
+
+h{
+  font-size : 20px
+}
