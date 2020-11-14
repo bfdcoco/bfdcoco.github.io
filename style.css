@@ -9,6 +9,11 @@ body{
   font-family: 'Nanum Pen Script', serif;
 }
 
+h1:hover{
+  color : #8B00FF
+}
+
+
 div {
   font-size : 10pt;
   margin : 10px;
