@@ -154,7 +154,209 @@ h1{
      <a href = "calender.html"><img src="https://github.com/bfdcoco/bfdcoco.github.io/blob/main/2019040901854_0.jpg?raw=true" alt="Coffee & Laptop" width="1100" height="500"></a>
     </div>
     <div class="carousel-item">
-      <img src="https://github.com/bfdcoco/bfdcoco.github.io/blob/main/2.PNG?raw=true" alt="site 2" width="1100" height="500">
+      <link href="style.css" rel="stylesheet" >
+
+<div id="calendar">
+    <h2></h2>
+    <div class="week"></div>
+    <div class="days"></div>
+    <button id = "goto" onClick = "today_init()" style="display:none">이번달로 가기</button>
+    
+</div>
+<button class="prev-btn"
+onClick="handlePrevCalendar()">이전></button>
+
+<button class="next-btn"
+onClick="handleNextCalendar()">다음></button>
+
+<script src="script.js"></script>
+
+<script>
+const calendar = document.getElementById("calendar");
+const week = document.querySelector(".week");
+const days = document.querySelector(".days");
+
+let today = new Date();
+let count = 0;
+
+const firstDay = (count) =>
+    new Date(today.getFullYear(), today.getMonth() + count, 1);
+const lastDay = (count) =>
+    new Date(today.getFullYear(), today.getMonth() + count + 1, 0);
+const weekName = ["일", "월", "화", "수", "목", "금", "토"];
+
+week.innerHTML = weekName
+    .map((week) => `<div class="weekname"> ${week} </div>`)
+    .join("");
+1;
+
+function calendarBuilding(firstDate, lastDate) {
+    const calendarHeader = calendar.querySelector("h2");
+
+    calendarHeader.innerHTML = `${lastDate.getFullYear()}년 <span class ="Month"> ${
+        lastDate.getMonth() + 1
+    }</span> 월`;
+
+
+    let weekday_no = 0;
+    days.innerHTML = "";
+    for (let i = 0; i < firstDate; i++) {
+        days.innerHTML += `<div class="daynum empty"></div>`;
+        weekday_no++;
+    }
+
+    for (let i = 1; i < lastDate.getDate() + 1; i++) {
+      
+      if ((weekday_no%7) == 0) {
+        
+        if (i == today.getDate() && count==0){
+        days.innerHTML += `<div class="daynum today sunday"> ${i} </div>`;
+      } else{
+        days.innerHTML += `<div class="daynum sunday"> ${i} </div>`;
+      }
+
+      }
+
+      else {
+        if (i == today.getDate() && count==0){
+        days.innerHTML += `<div class="daynum today"> ${i} </div>`;
+      } else{
+        days.innerHTML += `<div class="daynum"> ${i} </div>`;
+
+        } 
+      }
+      weekday_no++;
+
+    }
+    days.innerHTML += `<span class = "WM"> made by Seohyeon </span>`
+
+    
+
+    if (count != 0){
+      document.getElementById("goto").style.display="block";
+    }
+    else{
+      document.getElementById("goto").style.display="none";
+    }
+}
+
+function handleNextCalendar() {
+    count += 1;
+    const firstDate = firstDay(count).getDay();
+    const lastDate = lastDay(count);
+    calendarBuilding(firstDate, lastDate);
+}
+
+function handlePrevCalendar() {
+    count -= 1;
+    const firstDate = firstDay(count).getDay();
+    const lastDate = lastDay(count);
+    calendarBuilding(firstDate, lastDate);
+}
+
+function init() {
+    const firstDate = firstDay(0).getDay();
+    const lastDate = lastDay(0);
+    calendarBuilding(firstDate, lastDate);
+}
+
+function today_init(){
+  count = 0;
+  init()
+}
+
+init();
+</script>
+
+<style>
+#calendar {
+    width: 380px;
+    height: 300px;
+    text-align: center;
+    border: 1px solid black;
+}
+
+.week {
+    display: flex;
+}
+
+.weekname {
+    width: 50px;
+    
+}
+
+.days {
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+.daynum {
+    width: 50px;
+    line-height: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.daynum .empty {
+    pointer-events: none;
+}
+
+.today {
+  background-color:hotpink;
+  border : 2px solid darkviolet;
+}
+.daynum:hover {
+    background: greenyellow;
+    color: palevioletred;
+    border : 2px solid darkviolet;
+    font-size: 20px;
+}
+
+.prev-btn{
+  position: absolute;
+  top : 20;
+  left:30px;
+}
+
+.next-btn{
+  position: absolute;
+  top : 20;
+  left:325px;
+}
+
+//id는 # 클래스는 .으로 시작
+
+#goto{
+  position : absolute;
+  left : 300px;
+  top : 100px;
+  margin-left:146px;
+
+} 
+
+.Month{
+  font-size : 50px;
+  color : cornflowerblue
+}
+
+.sunday{
+  color : red
+}
+
+.WM{
+  padding-top: 8px;
+  padding-left: 17px;
+  font-size : 5px;
+  color : cornflowerblue
+}
+
+.WM:hover{
+  color : burlywood
+}
+</style>
+
+
     </div>
   </div>
   
