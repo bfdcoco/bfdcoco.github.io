@@ -1,30 +1,85 @@
-li{
-  font-size : 14pt;
-  list-style-type : circle
+#calendar {
+    width: 380px;
+    height: 300px;
+    text-align: center;
+    border: 1px solid black;
 }
 
-@import url(http://fonts.googleapis.com/earlyaccess/nanumpenscript.css);
-
-body{
-  font-family: 'Nanum Pen Script', serif;
+.week {
+    display: flex;
 }
 
-h1:hover{
-  color : #8B00FF
+.weekname {
+    width: 50px;
+    
 }
 
-
-div {
-  font-size : 10pt;
-  margin : 10px;
-  border-left: 1px solid #8B00FF;
-  padding-left : 20px;
-  border-left-width : 3px;
-
-  border-right: 1px solid #8B00FF;
-  border-right-width : 3px;
+.days {
+    display: flex;
+    flex-wrap: wrap;
+    
 }
 
-h{
-  font-size : 20px
+.daynum {
+    width: 50px;
+    line-height: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.daynum .empty {
+    pointer-events: none;
+}
+
+.today {
+  background-color:hotpink;
+  border : 2px solid darkviolet;
+}
+.daynum:hover {
+    background: greenyellow;
+    color: palevioletred;
+    border : 2px solid darkviolet;
+    font-size: 20px;
+}
+
+.prev-btn{
+  position: absolute;
+  top : 20;
+  left:30px;
+}
+
+.next-btn{
+  position: absolute;
+  top : 20;
+  left:325px;
+}
+
+//id는 # 클래스는 .으로 시작
+
+#goto{
+  position : absolute;
+  left : 300px;
+  top : 100px;
+  margin-left:146px;
+
+} 
+
+.Month{
+  font-size : 50px;
+  color : cornflowerblue
+}
+
+.sunday{
+  color : red
+}
+
+.WM{
+  padding-top: 8px;
+  padding-left: 17px;
+  font-size : 5px;
+  color : cornflowerblue
+}
+
+.WM:hover{
+  color : burlywood
 }
