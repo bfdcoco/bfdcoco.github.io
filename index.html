@@ -1,41 +1,18 @@
-<!DOCTYPE html>
-<html>
-  <head>
+<link href="style.css" rel="stylesheet" >
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>repl.it</title>
-    <link href="style.css" rel="stylesheet" type="text/css" />
-  </head>
-  
-  <body>
-
-<div>
-  <h1>자주 듣는 팝송 목록</h1>
-<ul>
-  <h>  
-  잔잔한 팝송
-  <h>
-    <li><a href="https://www.youtube.com/watch?v=wwmhgJmukUg">Rudimental - These day</a></li><br>
-    <li><a href="https://www.youtube.com/watch?v=emm0uGDGg2o&list=PLpxSczeGF7xTE7gXjaKXd5D1OrZJrnVog&index=1">Sasha Sloan - Dancing With Your Ghost</a></li><br>
-    <li><a href="https://www.youtube.com/watch?v=jO2viLEW-1A&list=PLpxSczeGF7xTE7gXjaKXd5D1OrZJrnVog&index=10">Jeremy jucker - comethru</a></li><br>
-    <li><a href="https://www.youtube.com/watch?v=0yW7w8F2TVA&list=PLpxSczeGF7xTE7gXjaKXd5D1OrZJrnVog&index=12">James Arthur - Say You Won't Let Go</a></li><br>
-    <li><a href="https://www.youtube.com/watch?v=7pFXFu59iNw&list=PLpxSczeGF7xTE7gXjaKXd5D1OrZJrnVog&index=27">Charlie Puth - </a></li><br><br>
- 
-  <h>  
-  신나는 팝송
-  <h>
-     <li><a href="https://www.youtube.com/watch?v=IPXIgEAGe4U&list=PLpxSczeGF7xTE7gXjaKXd5D1OrZJrnVog&index=3">Panic At The Disco - High hopes</a></li><br>
-     <li><a href="https://www.youtube.com/watch?v=wSOc5jmvF-k&list=PLpxSczeGF7xTE7gXjaKXd5D1OrZJrnVog&index=24">Maroon 5 - Sugar</a></li><br>
-     <li><a href="https://www.youtube.com/watch?v=jUjDcqdvCrk">Clean Bandit - Rahter be</a></li><br>
-     <li><a href="https://www.youtube.com/watch?v=0BNwmJIhEiU&list=PLpxSczeGF7xTE7gXjaKXd5D1OrZJrnVog&index=2">Cadmium - Click & Scroll</a></li><br>
-     <li><a href="https://www.youtube.com/watch?v=-ncIVUXZla8&list=PLpxSczeGF7xTE7gXjaKXd5D1OrZJrnVog&index=54">Avicii - Waiting For Love</a></li><br>
+<div id="calendar">
+    <h2></h2>
+    <div class="week"></div>
+    <div class="days"></div>
+    <button id = "goto" onClick = "today_init()" style="display:none">이번달로 가기</button>
+    
 </div>
+<button class="prev-btn"
+onClick="handlePrevCalendar()">이전></button>
 
-  </body>
-</html>
+<button class="next-btn"
+onClick="handleNextCalendar()">다음></button>
+
+<script src="script.js"></script>
 
 
-<!-- #3CB371 - 연초 
-    8B00FF - 보라
--->
